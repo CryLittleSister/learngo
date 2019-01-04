@@ -7,6 +7,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Operators combine the expressions
 //
@@ -22,5 +24,5 @@ package main
 
 func main() {
 
-	// fmt.Println("Hello!" + ?)
+	fmt.Println("Hello!" + "!" + "!" + "?")
 }
