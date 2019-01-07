@@ -42,27 +42,35 @@ import "fmt"
 // ---------------------------------------------------------
 
 func main() {
-	// EXAMPLES:
+	// 1-9
+	fmt.Println(0x0)
+	fmt.Println(0x1)
+	fmt.Println(0x2)
+	fmt.Println(0x3)
+	fmt.Println(0x4)
+	fmt.Println(0x5)
+	fmt.Println(0x6)
+	fmt.Println(0x7)
+	fmt.Println(0x8)
+	fmt.Println(0x9)
 
-	// I'm going to print 10 in hexadecimal
+	// 10-15
 	fmt.Println(0xa)
+	fmt.Println(0xb)
+	fmt.Println(0xc)
+	fmt.Println(0xd)
+	fmt.Println(0xe)
+	fmt.Println(0xf)
 
-	// I'm going to print 16 in hexadecimal
-	// 0x10
-	//   ^^-----  1 * 0 = 0
-	//   |
-	//   +------ 16 * 1 = 16
-	//                  = 16
-	fmt.Println(0x10)
+	// 17
+	fmt.Println(0x11)
 
-	// I'm going to print 150 in hexadecimal
-	// 0x96
-	//   ^^-----  1 * 6 = 6
-	//   |
-	//   +------ 16 * 9 = 144
-	//                  = 150
-	fmt.Println(0x96)
+	// 25
+	fmt.Println(0x19)
 
-	// COMMENT-OUT ALL THE CODE ABOVE, THEN,
-	// ADD YOUR OWN SOLUTIONS BELOW
+	// 50
+	fmt.Println(0x32)
+
+	// 100
+	fmt.Println(0x64)
 }
