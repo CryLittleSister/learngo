@@ -36,7 +36,7 @@ import (
 // ---------------------------------------------------------
 
 func main() {
-	fmt.Printf("There are %v people!\n", len(os.Args)-1)
+	fmt.Printf("There are %d people!\n", len(os.Args)-1)
 	for _, person := range os.Args[1:] {
 		fmt.Printf("Hello great %s!\n", person)
 	}
