@@ -7,6 +7,11 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Greet 5 People
 //
@@ -31,5 +36,9 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// TYPE YOUR CODE HERE
+	fmt.Printf("There are %v people!\n", len(os.Args)-1)
+	for _, person := range os.Args[1:] {
+		fmt.Printf("Hello great %s!\n", person)
+	}
+	fmt.Println("Nice to meet you all!")
 }
