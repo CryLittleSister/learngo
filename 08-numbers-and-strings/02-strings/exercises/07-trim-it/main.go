@@ -9,6 +9,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 )
 
 // ---------------------------------------------------------
@@ -34,5 +35,5 @@ I should go and play.
 
 	`
 
-	fmt.Println(msg)
+	fmt.Println(strings.TrimSpace(msg))
 }
