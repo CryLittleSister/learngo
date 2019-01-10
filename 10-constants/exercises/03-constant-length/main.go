@@ -7,6 +7,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Constant Length
 //
@@ -32,4 +34,9 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	const (
+		home   = "Milky Way Galaxy"
+		length = len(home)
+	)
+	fmt.Printf("There are %d characters inside the %q\n", length, home)
 }

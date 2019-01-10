@@ -23,8 +23,13 @@ func main() {
 
 	feet, _ := strconv.ParseFloat(arg, 64)
 
-	meters := feet * 0.3048
-	yards := feet * 0.3333
+	const (
+		m float64 = 0.3048
+		y         = 0.3333
+	)
+
+	meters := feet * m
+	yards := feet * y
 
 	fmt.Printf("%g feet is %g meters.\n", feet, meters)
 	fmt.Printf("%g feet is %g yards.\n", feet, yards)

@@ -7,6 +7,8 @@
 
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Area
 //
@@ -20,10 +22,10 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// const (
-	// 	width  int16 = 25
-	// 	height int32 = width * 2
-	// )
+	const (
+		width  int16 = 25
+		height       = width * 2
+	)
 
-	// fmt.Printf("area = %d\n", width*height)
+	fmt.Printf("area = %d\n", width*height)
 }
