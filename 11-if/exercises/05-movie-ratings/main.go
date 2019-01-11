@@ -7,6 +7,12 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // STORY
 //
@@ -52,4 +58,25 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	var age float64
+	if len(os.Args) > 1 {
+		age, _ = strconv.ParseFloat(os.Args[1], 64)
+
+		if os.Args[1] != "0" && age != 0 {
+			if age < 1 {
+				fmt.Printf("Wrong age: %q\n", os.Args[1])
+			} else if age <= 12 {
+				fmt.Println("PG-Rated")
+			} else if age > 12 && age <= 17 {
+				fmt.Println("PG-13")
+			} else {
+				fmt.Println("R-Rated")
+			}
+
+		} else {
+			fmt.Println("Requires age")
+		}
+	} else {
+		fmt.Println("Requires age")
+	}
 }

@@ -32,19 +32,15 @@ func main() {
 
 	var big bool
 
-	if radius >= 50 {
-		if radius >= 100 {
-			if radius >= 200 {
-				big = true
-			}
-		}
+	if radius >= 200 {
+		big = true
 	}
 
-	if big != true {
+	if !big {
 		fmt.Println("I don't know.")
-	} else if !(isSphere == false) {
-		fmt.Println("It's a big sphere.")
+	} else if !isSphere {
+		fmt.Println("I don't know.")
 	} else {
-		fmt.Println("I don't know.")
+		fmt.Println("It's a big sphere.")
 	}
 }
