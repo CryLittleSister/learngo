@@ -48,8 +48,10 @@ const (
 	errUser  = "Access denied for %q.\n"
 	errPwd   = "Invalid password for %q.\n"
 	accessOK = "Access granted to %q.\n"
-	user     = "jack"
-	pass     = "1888"
+	user1    = "jack"
+	pass1    = "1888"
+	user2    = "sally"
+	pass2    = "1999"
 )
 
 func main() {
@@ -62,9 +64,9 @@ func main() {
 
 	u, p := args[1], args[2]
 
-	if u != user {
+	if u != user1 && u != user2 {
 		fmt.Printf(errUser, u)
-	} else if p != pass {
+	} else if (u == user1 && p != pass1) || u == user2 && p != pass2 {
 		fmt.Printf(errPwd, u)
 	} else {
 		fmt.Printf(accessOK, u)
