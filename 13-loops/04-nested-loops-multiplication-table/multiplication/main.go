@@ -9,14 +9,25 @@ package main
 
 import (
 	"fmt"
+	"os"
+	"strconv"
 )
 
 // EXERCISE: Get the `max` from the user
 //           And create the table according to that.
 
-const max = 5
-
 func main() {
+	args := os.Args
+	if len(args) != 2 {
+		fmt.Println("Please enter an integer")
+		return
+	}
+
+	max, err := strconv.Atoi(args[1])
+	if err != nil {
+		fmt.Printf("ERROR: %q is not an integer\n", args[1])
+	}
+
 	// print the header
 	fmt.Printf("%5s", "X")
 	for i := 0; i <= max; i++ {
