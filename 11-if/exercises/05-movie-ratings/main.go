@@ -58,9 +58,15 @@ import (
 // ---------------------------------------------------------
 
 func main() {
-	var age float64
+	var (
+		age float64
+		err error
+	)
 	if len(os.Args) > 1 {
-		age, _ = strconv.ParseFloat(os.Args[1], 64)
+		age, err := strconv.ParseFloat(os.Args[1], 64)
+		if err != nil {
+			fmt.Println("ERROR: Please give an age")
+		}
 
 		if os.Args[1] != "0" && age != 0 {
 			if age < 1 {
