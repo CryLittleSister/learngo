@@ -7,6 +7,14 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"path/filepath"
+	"regexp"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Path Searcher
 //
@@ -79,4 +87,19 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	queries := os.Args[1:]
+	path := filepath.SplitList(strings.ToLower(os.Getenv("PATH")))
+
+	if len(queries) < 1 {
+		fmt.Println("Please enter a search term.")
+	}
+
+	for _, q := range queries {
+		for i, p := range path {
+			if r, _ := regexp.MatchString(strings.ToLower(q), p); r {
+				fmt.Printf("#%-3d:   %s\n", i+1, p)
+			}
+		}
+	}
+
 }

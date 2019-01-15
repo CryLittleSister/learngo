@@ -7,6 +7,13 @@
 
 package main
 
+import (
+	"fmt"
+	"os"
+	"regexp"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Case Insensitive Search
 //
@@ -24,4 +31,27 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	const corpus = "You are a captive audience while sitting on the toilet, pet me. Feed me, give me attention. Scamper, rub face on everything"
+	reg, _ := regexp.Compile(`[\.,]`)
+
+	words := strings.Fields(strings.ToLower(reg.ReplaceAllString(corpus, "")))
+	queries := os.Args[1:]
+	if len(queries) < 1 {
+		fmt.Println("Please provide at least one search term.")
+	}
+	var found bool
+	for _, v := range queries {
+		for i, w := range words {
+			if w == strings.ToLower(v) {
+				fmt.Printf("%q found at index #%d!!\n", v, i)
+				found = true
+				break
+			}
+		}
+	}
+
+	if !found {
+		fmt.Println("Sorry, there are no results for any of your search terms")
+	}
+
 }
