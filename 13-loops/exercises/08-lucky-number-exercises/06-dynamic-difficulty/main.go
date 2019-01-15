@@ -7,6 +7,14 @@
 
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"os"
+	"strconv"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Dynamic Difficulty
 //
@@ -48,4 +56,55 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	args := os.Args[1:]
+	maxTurns := 5
+	intro := `Welcome to the Lucky Number Game! 🍀
+
+The program will pick a selection of random positive numbers based on how high your guess is.
+Your mission is to guess one of those numbers.
+	
+The greater your number is, harder it gets.
+	
+Wanna play?`
+	if len(args) < 1 {
+		fmt.Println(intro)
+		return
+	}
+
+	guess, err := strconv.Atoi(args[0])
+	if err != nil || guess < 0 {
+		fmt.Println("ERROR: Please choose a positive number")
+		return
+	}
+
+	switch {
+	case guess >= 100:
+		maxTurns += 20
+	case guess >= 50:
+		maxTurns += 10
+	case guess >= 25:
+		maxTurns += 5
+	case guess >= 10:
+		maxTurns++
+	}
+
+	rand.Seed(time.Now().UnixNano())
+
+	for i := 1; i <= maxTurns; i++ {
+		var cpu int
+		if guess < 10 {
+			cpu = rand.Intn(11)
+		} else {
+			cpu = rand.Intn(guess + 1)
+		}
+
+		if guess == cpu {
+			fmt.Println("WEEEE ARE THE CHAMPIONS MY FRIEEEEND")
+			return
+		} else if i == maxTurns {
+			fmt.Println("uh-oh you looooose sucka")
+			return
+		}
+
+	}
 }
