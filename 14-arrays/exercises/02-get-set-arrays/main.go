@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Get and Set Array Elements
 //
@@ -115,4 +117,70 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	var (
+		names     [3]string
+		distances [5]int
+		data      [5]byte
+		ratios    [1]float64
+		alives    [4]bool
+		zero      [0]byte
+	)
+
+	names = [...]string{"Cat", "Charlotte", "Alex"}
+	distances = [...]int{40, 70, 120, 140, 200}
+	data = [...]byte{1, 14, 11, 91, 19}
+	ratios[0] = 9.99
+	alives = [...]bool{true, true, false, true}
+
+	for i := 0; i < len(names); i++ {
+		fmt.Printf("names[%d]: %q\n", i, names[i])
+	}
+	fmt.Println("")
+	for i := 0; i < len(distances); i++ {
+		fmt.Printf("distances[%d]: %d\n", i, distances[i])
+	}
+	fmt.Println("")
+	for i := 0; i < len(data); i++ {
+		fmt.Printf("data[%d]: %d\n", i, data[i])
+	}
+	fmt.Println("")
+	for i := 0; i < len(ratios); i++ {
+		fmt.Printf("ratios[%d]: %.2f\n", i, ratios[i])
+	}
+	fmt.Println("")
+	for i := 0; i < len(alives); i++ {
+		fmt.Printf("alives[%d]: %t\n", i, alives[i])
+	}
+	fmt.Println("")
+	for i := 0; i < len(zero); i++ {
+		fmt.Printf("zero[%d]: %d\n", i, zero[i])
+	}
+
+	fmt.Println("-------------------------------------")
+	fmt.Println("")
+
+	for i, v := range names {
+		fmt.Printf("names[%d]: %q\n", i, v)
+	}
+	fmt.Println("")
+	for i, v := range distances {
+		fmt.Printf("distances[%d]: %d\n", i, v)
+	}
+	fmt.Println("")
+	for i, v := range data {
+		fmt.Printf("data[%d]: %d\n", i, v)
+	}
+	fmt.Println("")
+	for i, v := range ratios {
+		fmt.Printf("ratios[%d]: %.2f\n", i, v)
+	}
+	fmt.Println("")
+	for i, v := range alives {
+		fmt.Printf("alives[%d]: %t\n", i, v)
+	}
+	fmt.Println("")
+	for i, v := range zero {
+		fmt.Printf("zero[%d]: %d\n", i, v)
+	}
+
 }
