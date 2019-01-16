@@ -1,5 +1,12 @@
 package main
 
+import (
+	"fmt"
+	"os"
+	"sort"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Number Sorter
 //
@@ -39,4 +46,20 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	if len(os.Args) < 2 {
+		fmt.Println("Please give me up to 5 numbers.")
+		return
+	}
+
+	var nums [5]int
+
+	for i, n := range os.Args[1:] {
+		if n, err := strconv.Atoi(n); err == nil {
+			nums[i] = n
+
+		}
+	}
+	sort.Ints(nums[:])
+	fmt.Printf("%v\n", nums)
+
 }

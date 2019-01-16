@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Currency Converter
 //
@@ -38,4 +44,38 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	const (
+		EUR = iota
+		GBP
+		JPY
+	)
+
+	conv := [...]float64{
+		EUR: 0.88,
+		GBP: 0.78,
+		JPY: 113.02,
+	}
+	if len(os.Args) < 2 {
+		fmt.Println("Please enter an amount in dollars to convert.")
+		return
+	}
+
+	USD, err := strconv.ParseFloat(os.Args[1], 64)
+	if err != nil {
+		fmt.Printf("ERROR: %s is not a number.\n", os.Args[1])
+		return
+	}
+
+	for i, v := range conv {
+		var cur string
+		switch i {
+		case 0:
+			cur = "EUR"
+		case 1:
+			cur = "GBP"
+		case 2:
+			cur = "JPY"
+		}
+		fmt.Printf("%.2f USD is %.2f %v\n", USD, v*USD, cur)
+	}
 }

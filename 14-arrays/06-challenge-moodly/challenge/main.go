@@ -1,5 +1,12 @@
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"os"
+	"time"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Moodly
 //
@@ -38,4 +45,20 @@ package main
 // ---------------------------------------------------------
 
 func main() {
+	if len(os.Args) < 2 {
+		fmt.Println("[your name]")
+		return
+	}
+
+	moods := [6]string{
+		"happy 😀",
+		"sad 😞",
+		"awesome 😎",
+		"terrible 😩",
+		"good 👍",
+		"bad 👎",
+	}
+	rand.Seed(time.Now().UnixNano())
+	fmt.Printf("%s feels %s\n", os.Args[1], moods[rand.Intn(len(moods))])
+
 }

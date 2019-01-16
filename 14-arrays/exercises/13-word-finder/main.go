@@ -1,5 +1,12 @@
 package main
 
+import (
+	"fmt"
+	"os"
+	"regexp"
+	"strings"
+)
+
 // ---------------------------------------------------------
 // EXERCISE: Word Finder
 //
@@ -46,4 +53,33 @@ package main
 const corpus = "lazy cat jumps again and again and again since the beginning this was very important"
 
 func main() {
+	words := strings.Fields(strings.ToLower(corpus))
+	filter := [...]string{"and", "or", "was", "the", "since", "very"}
+	var searchWords []string
+
+	if len(os.Args) < 2 {
+		fmt.Println("Please give me a word to search.")
+		return
+	}
+
+	for _, a := range os.Args[1:] {
+		var filtered bool
+		for _, f := range filter {
+			if a == f {
+				filtered = true
+			}
+		}
+		if !filtered {
+			searchWords = append(searchWords, strings.ToLower(a))
+		}
+	}
+
+	for _, s := range searchWords {
+
+		for j, w := range words {
+			if m, _ := regexp.MatchString(s, w); m {
+				fmt.Printf("#%-2d : %q\n", j+1, w)
+			}
+		}
+	}
 }

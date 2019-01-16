@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // ---------------------------------------------------------
 // EXERCISE: Fix
 //
@@ -11,19 +13,10 @@ package main
 // ---------------------------------------------------------
 
 func main() {
-	// var names [3]string = [3]string{
-	// 	"Einstein" "Shepard"
-	// 	"Tesla"
-	// }
 
-	// var books [5]string = [5]string{
-	// 	"Kafka's Revenge",
-	// 	"Stay Golden",
-	// 	"",
-	// 	"",
-	// 	""
-	// }
+	names := [3]string{"Einstein", "Shepard", "Tesla"}
+	books := [5]string{"Kafka's Revenge", "Stay Golden"}
 
-	// fmt.Printf("%q\n", names)
-	// fmt.Printf("%q\n", books)
+	fmt.Printf("%q\n", names)
+	fmt.Printf("%q\n", books)
 }
