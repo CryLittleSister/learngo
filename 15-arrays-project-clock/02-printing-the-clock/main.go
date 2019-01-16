@@ -9,6 +9,9 @@ package main
 
 import (
 	"fmt"
+	"strconv"
+	"strings"
+	"time"
 )
 
 func main() {
@@ -97,10 +100,34 @@ func main() {
 	digits := [...]placeholder{
 		zero, one, two, three, four, five, six, seven, eight, nine,
 	}
+	t := time.Now()
+	hour, min, sec := t.Hour(), t.Minute(), t.Second()
+	h0, _ := strconv.Atoi(strings.Split(strconv.Itoa(hour), "")[0])
+	h1, _ := strconv.Atoi(strings.Split(strconv.Itoa(hour), "")[1])
+	m0, _ := strconv.Atoi(strings.Split(strconv.Itoa(min), "")[0])
+	m1, _ := strconv.Atoi(strings.Split(strconv.Itoa(min), "")[1])
+	s0, _ := strconv.Atoi(strings.Split(strconv.Itoa(sec), "")[0])
+	s1, _ := strconv.Atoi(strings.Split(strconv.Itoa(sec), "")[1])
 
-	for line := range digits[0] {
-		for digit := range digits {
-			fmt.Print(digits[digit][line], "  ")
+	colon := placeholder{
+		"   ",
+		" ░ ",
+		"   ",
+		" ░ ",
+		"   ",
+	}
+
+	clock := [...]placeholder{
+		digits[h0], digits[h1],
+		colon,
+		digits[m0], digits[m1],
+		colon,
+		digits[s0], digits[s1],
+	}
+
+	for line := range clock[0] {
+		for digit := range clock {
+			fmt.Print(clock[digit][line], "  ")
 		}
 		fmt.Println()
 	}

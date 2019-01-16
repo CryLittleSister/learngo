@@ -12,25 +12,25 @@
 ## GOALS:
 
 ### 👉 [STEP #1 — Print the Digits](https://github.com/inancgumus/learngo/tree/master/15-arrays-project-clock/01-printing-the-digits/)
-- [ ] Define a new placeholder type
-- [ ] Create the digit arrays from 0 to 9
-- [ ] Put them into the "digits" array
-- [ ] Print them side-by-side
+- [x] Define a new placeholder type
+- [x] Create the digit arrays from 0 to 9
+- [x] Put them into the "digits" array
+- [x] Print them side-by-side
 
 ### 👉 [STEP #2 — Print the Clock](https://github.com/inancgumus/learngo/tree/master/15-arrays-project-clock/02-printing-the-clock/)
-- [ ] Get the current time
-- [ ] Create the clock array
-- [ ] Print the clock
-- [ ] Add the separators
+- [x] Get the current time
+- [x] Create the clock array
+- [x] Print the clock
+- [x] Add the separators
 
 ### 👉 [STEP #3 — Animate the Clock](https://github.com/inancgumus/learngo/tree/master/15-arrays-project-clock/03-animating-the-clock/)
-- [ ] Create an infinite loop to update the clock
-- [ ] Update the clock every second
-- [ ] Clear the screen before the infinite loop
-- [ ] Move the cursor to the top-left corner of the screen before each
+- [x] Create an infinite loop to update the clock
+- [x] Update the clock every second
+- [x] Clear the screen before the infinite loop
+- [x] Move the cursor to the top-left corner of the screen before each
       step of the infinite loop
 
 ### 👉 [BONUS: STEP #4 — Blink the Clock](https://github.com/inancgumus/learngo/tree/master/15-arrays-project-clock/04-blinking-the-separators/)
-- [ ] Blink the separators
+- [x] Blink the separators
 
 ### 👉 [FULL ANNOTATED SOLUTION](https://github.com/inancgumus/learngo/tree/master/15-arrays-project-clock/05-full-annotated-solution/main.go)

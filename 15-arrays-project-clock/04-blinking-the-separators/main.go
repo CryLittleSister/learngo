@@ -97,14 +97,6 @@ func main() {
 		"███",
 	}
 
-	colon := placeholder{
-		"   ",
-		" ░ ",
-		"   ",
-		" ░ ",
-		"   ",
-	}
-
 	digits := [...]placeholder{
 		zero, one, two, three, four, five, six, seven, eight, nine,
 	}
@@ -116,6 +108,25 @@ func main() {
 
 		now := time.Now()
 		hour, min, sec := now.Hour(), now.Minute(), now.Second()
+		var colon placeholder
+
+		if sec%2 == 1 {
+			colon = placeholder{
+				"   ",
+				"   ",
+				"   ",
+				"   ",
+				"   ",
+			}
+		} else {
+			colon = placeholder{
+				"   ",
+				" ░ ",
+				"   ",
+				" ░ ",
+				"   ",
+			}
+		}
 
 		clock := [...]placeholder{
 			digits[hour/10], digits[hour%10],
